@@ -1,0 +1,183 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="">
+            <result>Index.jsp</result>
+        </action>              
+        <action name="login" class="Controller.Login.LoginAction">
+            <result name="admin" type="redirectAction">viewCourse</result>
+            <result name="fail">Invalid.jsp</result>
+            <result name="trainer" type="redirectAction">viewCourseTrainer</result>
+        </action>
+        
+        <!--COURSE-->
+        <action name="viewCourse" class="Controller.View.ViewCourseAction">
+            <result name="success">ViewCourse.jsp</result>
+        </action>
+        <action name="addForm" class="Controller.Add.AddCourseAction">
+            <result name="success" type="redirectAction">viewCourse</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateCourse" class="Controller.Update.UpdateAction">
+            <result name="success">Update.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateForm" class="Controller.Update.UpdateAction" method="doUpdate">
+            <result name="success" type="redirectAction">viewCourse</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="delCourse" class="Controller.Delete.DeleteCourseAction">
+            <result name="success" type="redirectAction" >viewCourse</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="detail" class="Controller.View.ViewCDetailAction">
+            <result name="success">ViewCourseDetail.jsp</result>
+        </action>
+        
+        
+        <!--TOPIC-->
+        <action name="view" class="Controller.View.ViewTopicAction">
+            <result name="success">ViewTopic.jsp</result>
+        </action>
+        <action name="addTopic" class="Controller.Add.AddTopicAction">
+            <result name="success">ViewTopic.jsp</result>
+            <result name="fail">Fail.jsp</result>  
+        </action>
+        <action name="deleteTopic" class="Controller.Delete.DelTopicAction">
+            <result name="success" type="redirectAction">view</result>
+            <result name="fail">Fail.jsp</result>    
+        </action>
+        <action name="updateTopic" class="Controller.Update.UpdateTopicAction">
+            <result name="success">UpdateTopic.jsp</result>
+            <result name="fail">Fail.jsp</result>    
+        </action>
+        <action name="EditTop" class="Controller.Update.UpdateTopicAction" method="doUpdate">
+            <result name="success" type="redirectAction">view</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        
+        <!--CATEGORY-->
+        <action name="addCate" class="Controller.Add.AddCateAction">
+            <result name="success" type="redirectAction">viewCate</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="deleteCategory" class="Controller.Delete.DeleteCategoryAction">
+            <result name="success" type="redirectAction">viewCate</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateCategory" class="Controller.Update.UpdateCateAction">
+            <result name="success">UpdateCategory.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="EditCategory" class="Controller.Update.UpdateCateAction" method="doUpdate">
+            <result name="success">ViewCate.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="detailCategory" class="Controller.View.ViewCateDetailAction">
+            <result name="success">ViewCateDetail.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="viewCate" class="Controller.View.ViewCateAction">
+            <result name="success">ViewCate.jsp</result>
+        </action>
+        
+        <!--ACCOUNT-->
+        <action name="addAccount" class="Controller.Add.AddAccountAction">
+            <result name="success" type="redirectAction">viewAccount</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="viewAccount" class="Controller.View.ViewAccountAction">
+            <result name="success">ViewAccount.jsp</result>
+        </action>
+        <action name="deleteAccount" class="Controller.Delete.DeleteAccountAction">
+            <result name="success" type="redirectAction">viewAccount</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateAccount" class="Controller.Update.UpdateAccountAction">
+            <result name="success">UpdateAccount.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="UpdateAcc" class="Controller.Update.UpdateAccountAction" method="doUpdate">
+            <result name="success">ViewAccount.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        
+        <!--TRAINER-->
+        <action name="addTn" class="Controller.Add.AddTrainerAction">
+            <result name="success" type="redirectAction">viewTrainer</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="viewTrainer" class="Controller.View.ViewTrainerAction">
+            <result name="success">ViewTrainer.jsp</result>
+        </action>
+        <action name="deleteTrainer" class="Controller.Delete.DeleteTrainerAction">
+            <result name="success" type="redirectAction">viewTrainer</result>
+        </action>
+        <action name="EditTrainerForm" class="Controller.Update.UpdateTrainerAction" method="doUpdate">
+            <result name="success" type="redirectAction">viewTrainer</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateTrainer" class="Controller.Update.UpdateTrainerAction">
+            <result name="success">UpdateTrainer.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="detailTrainer" class="Controller.View.ViewTrainerDetailAction">
+            <result name="success">ViewTrainerDetail.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        
+        <!--SEARCH-->
+        <action name="searchCourse" class="Controller.Search.SearchCourseAction">
+            <result name="success">SearchCourseList.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        
+        <!--TRAINEE-->
+        <action name="addTrainee" class="Controller.Add.AddTraineeAction">
+            <result name="success" type="redirectAction">viewTrainee</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="updateTrainee" class="Controller.Update.UpdateTraineeAction">
+            <result name="success">UpdateTrainee.jsp</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="EditTraineeForm" class="Controller.Update.UpdateTraineeAction" method="POSY">
+            <result name="success" type="redirectAction">viewTrainee</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="deleteTrainee" class="Controller.Delete.DeleteTraineeAction">
+            <result name="success" type="redirectAction">viewTrainee</result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="detailTrainee" class="Controller.View.ViewTraineeDetailAction">
+            <result name="success">ViewTraineeDetail.jsp</result>
+        </action>
+        <action name="viewTrainee" class="Controller.View.ViewTraineeAction">
+            <result name="success">ViewTrainee.jsp</result>
+        </action>
+        
+        <!--TRAINEE IN COURSE-->
+        <action name="AssignTraineeToCourse" class="Controller.Assign.AssignTraineeToCourseAction">
+            <result name="success" type="redirectAction">                
+                <param name="actionName">viewCourse</param>
+            </result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="assignedTrainee" class="Controller.View.ViewTraineeCourseAction">
+            <result name="success">TraineeInCourse.jsp</result>
+        </action>
+        <action name="DeleteTraineeInCourse" class="Controller.Delete.DeleteTraineeCourseAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">assignedTrainee</param>
+            </result>
+            <result name="fail">Fail.jsp</result>
+        </action>
+        <action name="listTraineeInCourse" class="Controller.View.ViewTraineeCourseAction">
+            <result name="success">ListTraineeAssigned.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,32 @@
+SMAP
+ListTraineeAssigned_jsp.java
+JSP
+*S JSP
+*F
++ 0 ListTraineeAssigned.jsp
+ListTraineeAssigned.jsp
++ 1 Header.jsp
+Header.jsp
++ 2 Footer.jsp
+Footer.jsp
+*L
+5,2:66
+1#1,295:68
+295:452,5
+295,11:365
+7#0,6:375
+12:470,13
+13,3:483
+15,9:383
+23:506,15
+24,2:521
+25:556,5
+25,2:525
+26:574,5
+26,2:529
+27:592,5
+27,3:533
+29,3:394
+1#2,38:396
+31#0:433
+*E
